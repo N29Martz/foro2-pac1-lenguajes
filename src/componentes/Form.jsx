@@ -27,6 +27,12 @@ const Form = () => {
             return;
         }
 
+        const emailExistente = user.find(u => u.email === email);
+        if (emailExistente) {
+            alert('El correo electrónico ya está en uso. Por favor, elija otro.');
+            return;
+        }
+
         const objetoUser = {
             name,
             username,
